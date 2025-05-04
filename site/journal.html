@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектная практика - Журнал</title>
+    <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Журнал проекта</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О проекте</a></li>
+            <li><a href="team.html">Участники</a></li>
+            <li><a href="journal.html" class="active">Журнал</a></li>
+            <li><a href="resources.html">Ресурсы</a></li>
+        </ul>
+    </nav>
+    <main class="journal-main">
+        <h2>Ход работы</h2>
+        
+        <div class="news-grid">
+            <!-- Новость 1 -->
+            <article class="news-card" data-media='{"images":["images/preza1/1.png","images/preza1/2.png","images/preza1/3.png","images/preza1/4.png","images/preza1/5.png","images/preza1/6.png","images/preza1/7.png","images/preza1/8.png","images/preza1/9.png","images/preza1/10.png","images/preza1/11.png","images/preza1/12.png","images/preza1/13.png"]}'>
+                <div class="news-content">
+                    <h3>03.03.2025 - Прошла презентация концепции настольной игры по безопасности "Выход есть!"</h3>
+                    <p>На занятие по проектной деятельности была представлена первая отчётная презентация по настольной игре "Выход есть!". Разработкой концепции игры занимались <a href="team.html#netkachev-daniil" class="member-link">Неткачев Даниил</a> и <a href="team.html#lender-mark" class="member-link">Лендер Марк</a> (студенты группы 241-3211). Были представлены правила игры, "карточки ситуаций", набросок поля и др.</p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+<!-- Новость 2 -->
+            <article class="news-card" data-media='{"images":["images/ilya/1.jpg","images/ilya/4.jpg","images/ilya/1.png","images/ilya/3.png"]}'>
+                <div class="news-content">
+                    <h3>07.03.2025 - Объявлен старт разработки компьютерной игры "Safety Madness"! </h3>
+                    <p><a href="team.html#enner-ilya" class="member-link">Еннер Илья</a> (241-3211), совместно с другими членами команды разработки, создал репозиторий проекта на гитхабе и начал работу по написанию кода. Также <a href="team.html#enner-ilya" class="member-link">Илья</a> предоставил код для работы стартового меню игры и продолжил работу над основными механиками.</p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+            <!-- Новость 3 -->
+            <article class="news-card" data-media='{"images":["images/kartochki/1.png","images/kartochki/2.png","images/kartochki/3.png","images/kartochki/4.png","images/kartochki/5.png","images/kartochki/6.png","images/kartochki/7.png","images/kartochki/8.png","images/kartochki/9.png","images/kartochki/10.png","images/kartochki/11.png","images/kartochki/12.png","images/kartochki/13.png","images/kartochki/14.png","images/kartochki/15.png","images/kartochki/16.png","images/kartochki/17.png","images/kartochki/18.png","images/kartochki/19.png","images/kartochki/20.png","images/kartochki/21.png","images/kartochki/22.png","images/kartochki/23.png","images/kartochki/24.png","images/kartochki/25.png","images/kartochki/26.png"]}'>
+                <div class="news-content">
+                    <h3>24.03.2025 - Прошла презентация карточек ситуаций для настольной игры "Выход есть!"</h3>
+                    <p>На занятие по проектной деятельности <a href="team.html#lender-mark" class="member-link">Лендер Марк </a>(241-3211), совместно с другими членами команды разработки игры, представил новый дизайн игровых карточек. Марк занимался непосредственно их оформлением и наполнением на предмет различных критических ситуаций. </p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+            <!-- Новость 4 -->
+            <article class="news-card" data-media='{"images":["images/Preza2/1.png","images/Preza2/2.png","images/Preza2/3.png","images/Preza2/4.png","images/Preza2/5.png","images/Preza2/6.png","images/Preza2/7.png","images/Preza2/8.png","images/Preza2/9.png","images/Preza2/10.png","images/Preza2/11.png","images/Preza2/12.png","images/Preza2/13.png","images/Preza2/14.png","images/Preza2/15.png","images/Preza2/16.png","images/Preza2/17.png","images/Preza2/18.png","images/Preza2/19.png","images/Preza2/20.png","images/Preza2/21.png","images/Preza2/22.png"]}'>
+                <div class="news-content">
+                    <h3>14.04.2025 - Готова презентация о разработке игры "Safety Madness"</h3>
+                    <p>На занятие по проектной деятельности был представлен промежуточный итог разработки компьютерной игры. <a href="team.html#netkachev-daniil" class="member-link">Неткачев Даниил</a>  (241-3211) подготовил отчет, в которым показал, что уже готово в игре : сюжет, локации, таблички с правилами безопасности и др.</p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+            <!-- Новость 5 -->
+            <article class="news-card" data-media='{"images":["images/anima/1.png","images/anima/2.png","images/anima/3.png","images/anima/4.png","images/anima/5.png","images/anima/6.png"],"video":"videos/1.mp4"}'>
+                <div class="news-content">
+                    <h3>17.04.2025 - Готовы анимации для компьютерной игры "Safety Madness"!</h3>
+                    <p>Наконец, после отрисовки, <a href="team.html#lender-mark" class="member-link">Лендер Марком</a> (241-3211) были представлены готовые анимации персонажей компьютерной игры "Safety Madness". </p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+<!-- Новость 6 -->
+            <article class="news-card" data-media='{"images":["images/ilya/2.png","images/ilya/5.png","images/ilya/6.png","images/ilya/7.png"],"video":"videos/7.mp4"}'>
+                <div class="news-content">
+                    <h3>21.04.2025 - Демоверсия почти готова! </h3>
+                    <p><a href="team.html#enner-ilya" class="member-link">Еннер Илья</a> (241-3211), совместно с другими членами команды, представил разработку на занятии по проектной деятельнотси. У Ильи получилось "внедрить" все анимации и наполнить первую локацию различными событиями, тем самым почти завершив работу над первым уровнем!</p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+            <!-- Новость 7 -->
+            <article class="news-card" data-media='{"images":["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpg"]}'>
+                <div class="news-content">
+                    <h3>28.04.2025 - Апробация в школе!</h3>
+                    <p>Состоялась апробация для учащихся 7а и 7в классов Домодедовской средней общеобразовательной школы № 2 имени М. Д. Глазова. <a href="team.html#lender-mark" class="member-link">Лендер Марк </a>, <a href="team.html#netkachev-daniil" class="member-link">Неткачев Даниил</a>  и <a href="team.html#enner-ilya" class="member-link">Еннер Илья</a> (студенты группы 241-3211), совместно с другими членами команды разработки игры, рассказали учащимся о проектной деятельности и других аспектах учёбы в Московском Политехе, а также представили демоверсию игры "Safety Madness", разработанную как раз в рамках проектной деятельности.</p>
+                </div>
+                <button class="show-news-media">Просмотреть</button>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Московский политехнический университет © 2025</p>
+        <p>Проект выполнен в рамках проектной практики</p>
+    </footer>
+
+    <!-- Модальное окно для медиа -->
+    <div id="newsMediaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalNewsTitle"></h3>
+            <div class="modal-media-container" id="modalNewsMedia"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработчик для показа медиа
+            document.querySelectorAll('.show-news-media').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const newsCard = this.closest('.news-card');
+                    const title = newsCard.querySelector('h3').textContent;
+                    const media = JSON.parse(newsCard.getAttribute('data-media'));
+                    
+                    openMediaModal(title, media);
+                });
+            });
+
+            // Закрытие модального окна
+            document.querySelector('.close-btn').addEventListener('click', closeMediaModal);
+            
+            window.addEventListener('click', function(event) {
+                if (event.target == document.getElementById('newsMediaModal')) {
+                    closeMediaModal();
+                }
+            });
+
+            function openMediaModal(title, media) {
+                const modal = document.getElementById('newsMediaModal');
+                const modalTitle = document.getElementById('modalNewsTitle');
+                const modalMedia = document.getElementById('modalNewsMedia');
+                
+                modalTitle.textContent = title;
+                modalMedia.innerHTML = '';
+                
+                // Добавляем изображения
+                if (media.images && media.images.length > 0) {
+                    const imagesContainer = document.createElement('div');
+                    imagesContainer.className = 'modal-images-grid';
+                    
+                    media.images.forEach(imgSrc => {
+                        const imgWrapper = document.createElement('div');
+                        imgWrapper.className = 'image-wrapper';
+                        
+                        const imgEl = document.createElement('img');
+                        imgEl.src = imgSrc;
+                        imgEl.alt = "Фотоотчёт: " + title;
+                        imgEl.className = 'media-image';
+                        
+                        imgWrapper.appendChild(imgEl);
+                        imagesContainer.appendChild(imgWrapper);
+                    });
+                    
+                    modalMedia.appendChild(imagesContainer);
+                }
+                
+                // Добавляем видео
+                if (media.video) {
+                    const videoContainer = document.createElement('div');
+                    videoContainer.className = 'video-wrapper';
+                    
+                    const videoEl = document.createElement('video');
+                    videoEl.src = media.video;
+                    videoEl.controls = true;
+                    videoEl.className = 'media-video';
+                    
+                    videoContainer.appendChild(videoEl);
+                    modalMedia.appendChild(videoContainer);
+                }
+                
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMediaModal() {
+                document.getElementById('newsMediaModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
