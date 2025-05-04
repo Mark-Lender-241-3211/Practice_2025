@@ -1,0 +1,514 @@
+/* Общие стили для всех страниц */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    background: #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a.active {
+    font-weight: bold;
+    color: #FFEB3B;
+    text-decoration: underline;
+}
+
+nav a:hover {
+    color: #FFEB3B;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+/* Кнопки (общие для всех страниц) */
+.button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    margin: 0 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.button:hover {
+    background: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Стили для главной страницы */
+.index-main .project-annotation {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.index-main .project-card {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid #4CAF50;
+}
+
+.index-main .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.index-main .result-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.index-main .result-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.index-main .quick-links {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Стили для страницы "О проекте" */
+.about-main .project-details {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.about-main .info-block {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 4px solid #4CAF50;
+}
+
+.about-main .work-directions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.about-main .direction {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Стили для страницы "Участники" */
+.team-main .team-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.team-main .core-team {
+    margin-bottom: 40px;
+}
+
+.team-main .core-member {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.team-main .core-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.team-main .member-info {
+    flex: 1;
+}
+
+.team-main .member-role {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.team-main .course-group {
+    margin-bottom: 20px;
+}
+
+.team-main .course-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.team-main .members-list {
+    display: none;
+}
+
+.team-main .members-list.active {
+    display: block;
+}
+
+.team-main .member-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.team-main .toggle-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.team-main .toggle-btn:hover {
+    background: #3e8e41;
+}
+
+.team-main .group-section {
+    margin-bottom: 20px;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.team-main .group-section h4 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.team-main .group-section ul {
+    padding-left: 20px;
+}
+
+/* Стили для страницы "Журнал" */
+.journal-main .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.journal-main .news-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.journal-main .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.journal-main .news-content {
+    flex-grow: 1;
+}
+
+.journal-main .news-content h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+.journal-main .show-news-media {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.journal-main .show-news-media:hover {
+    background: #3e8e41;
+}
+
+/* Стили для страницы "Ресурсы" */
+.resources-main ul {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    list-style-type: none;
+}
+
+.resources-main li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.resources-main li:last-child {
+    border-bottom: none;
+}
+
+.resources-main a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.resources-main a:hover {
+    color: #3e8e41;
+    text-decoration: underline;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    background: white;
+    margin: 2% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #f44336;
+}
+
+/* Модальное окно для изображений (главная страница) */
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.modal-images img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Модальное окно для медиа (журнал) */
+.modal-media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.image-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.media-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.media-video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    background: #000;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    main {
+        padding: 1.5rem;
+    }
+    
+    .journal-main .news-grid,
+    .modal-images,
+    .modal-images-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-main .core-member {
+        flex-direction: column;
+    }
+    
+    .team-main .core-member img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .button {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+    
+    .modal-content {
+        padding: 15px;
+        width: 95%;
+    }
+}
+.member-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed #2c3e50;
+    transition: all 0.2s ease;
+}
+
+.member-link:hover {
+    color: #e74c3c;
+    border-bottom: 1px dashed #e74c3c;
+}
+
+/* Для плавного скролла при переходе по якорям */
+html {
+    scroll-behavior: smooth;
+scroll-padding-top: 100px;
+}
