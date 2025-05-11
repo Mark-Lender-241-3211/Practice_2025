@@ -23,11 +23,11 @@ site/
 ## Страницы сайта
 
 ### Меню навигации:
-- [Главная страница]()
-- [Журнал]()
-- [Участники]()
-- [Ресурсы]()
-- [Контакты]()
+- [Главная страница](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/7530eff07a43d0737f566f8b66753adaed46657a/site/index.html)
+- [О проекте](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/7530eff07a43d0737f566f8b66753adaed46657a/site/about.html)
+- [Участники](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/7530eff07a43d0737f566f8b66753adaed46657a/site/team.html)
+- [Журнал](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/7530eff07a43d0737f566f8b66753adaed46657a/site/journal.html)
+- [Ресурсы](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/7530eff07a43d0737f566f8b66753adaed46657a/site/resources.html)
 
 ### Главная страница
 Здесь вы найдете:
