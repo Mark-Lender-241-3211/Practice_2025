@@ -11,6 +11,11 @@
     <header>
         <h1>Охрана труда на предприятии</h1>
         <h2>Проект студентов Московского политехнического университета</h2>
+	    <button class="mobile-menu-toggle" aria-label="Меню">
+  <span class="burger-icon"></span>
+  <span class="burger-icon"></span>
+  <span class="burger-icon"></span>
+</button>
     </header>
     
     <nav>
@@ -237,4 +242,40 @@
     window.addEventListener("scroll", positionLogo);
     window.addEventListener("resize", positionLogo);
 })();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    toggleButton.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Блокировка скролла при открытом меню
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Закрытие меню при клике на пункт
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            toggleButton.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Закрытие меню при ресайзе (если перешли на десктопный вид)
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 767) {
+            toggleButton.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
 </script></html>
