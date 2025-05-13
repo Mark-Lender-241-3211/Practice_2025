@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Охрана труда на предприятии</h1>
-        <p>Проект студентов Московского политехнического университета</p>
+        <h2>Проект студентов Московского политехнического университета</h2>
     </header>
     
     <nav>
@@ -28,12 +28,12 @@
             <h2>Аннотация проекта</h2>
             
             <div class="project-card">
-                <h3>Цель проекта</h3>
+                <h3>&#127919 Цель проекта</h3>
                 <p>Повышение осведомленности о технике безопасности и правилах поведения при чрезвычайных ситуациях в образовательных учреждениях и на производственных предприятиях.</p>
             </div>
 
             <div class="project-card">
-                <h3>Основные задачи</h3>
+                <h3>&#x1F4DD Основные задачи</h3>
                 <ul>
                     <li>Разработка интерактивных занятий и наглядных пособий для школ</li>
                     <li>Создание обучающих видеороликов и плакатов для вузов</li>
@@ -41,48 +41,48 @@
                 </ul>
             </div>
 
-            <section class="project-annotation">
-                <h2>Реализованные результаты</h2>
+            <section class="project-card">
+                <h3>&#x1F4C8 Реализованные результаты</h3>
                 
                 <div class="results-grid">
                     <div class="result-item">
                         <h4>Для школ</h4>
                         <p>Проведены уроки безопасности с раздачей памяток</p>
-                        <button class="show-images-btn" data-type="school">Показать фото</button>
+                        <button class="button" data-type="school">Показать фото</button>
                     </div>
                     
                     <div class="result-item">
                         <h4>Для вузов</h4>
                         <p>Созданы плакаты по пожарной безопасности</p>
-                        <button class="show-images-btn" data-type="university">Показать фото</button>
+                        <button class="button" data-type="university">Показать фото</button>
                     </div>
                     
                     <div class="result-item">
                         <h4>Для предприятий</h4>
                         <p>Разработаны инструкции и инфографика</p>
-                        <button class="show-images-btn" data-type="factory">Показать фото</button>
+                        <button class="button" data-type="factory">Показать фото</button>
                     </div>
                 </div>
             </section>
 
             <div class="project-card">
-                <h3>Руководители</h3>
-                <p>к.т.н., доцент Л.С. Ермакова<br>
-                к.т.н., доцент Ю.С. Кудрявцева</p>
+                <h3>&#x1F465 Руководители</h3>
+                <p><a href="https://vk.com/lidia_ermak" target="_blank">к.т.н., доцент Л.С. Ермакова</a><br>
+                <a href="https://vk.com/id2804543" target="_blank">к.т.н., доцент Ю.С. Кудрявцева</a></p>
             </div>
         </section>
 
         <section class="quick-links">
             <h2>Быстрые ссылки</h2>
-            <a href="team.html" class="button">Состав команды</a>
             <a href="journal.html" class="button">Последние новости проекта</a>
-            <a href="resources.html" class="button">Методические материалы</a>
+	    <a href="team.html" class="button">Состав команды</a>
+            <a href="resources.html" class="button">Полезные ссылки</a>
         </section>
     </main>
 
     <footer>
         <p>Московский политехнический университет © 2025</p>
-        <p>Проект реализуется в рамках дисциплины «Проектная деятельность»</p>
+        <p>Сайт выполнен в рамках практики по дисциплине «Проектная деятельность»</p>
     </footer>
 
     <!-- Модальное окно -->
@@ -92,7 +92,6 @@
             <div class="modal-images" id="modalImages"></div>
         </div>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const imageData = {
@@ -116,7 +115,7 @@
                 ]
             };
 
-            document.querySelectorAll('.show-images-btn').forEach(btn => {
+            document.querySelectorAll('.button').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const type = this.getAttribute('data-type');
                     openModal(type);
@@ -156,5 +155,86 @@
             }
         });
     </script>
-</body>
-</html>
+<!-- Логотип + стили + логика -->
+<a href="https://github.com/NetkachevDaniil" target="_blank" class="floating-logo-link">
+    <img src="images/gpt.png" alt="Логотип" class="floating-logo">
+</a>
+
+<style>
+.floating-logo-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px; /* Начальная позиция до расчета скриптом */
+    z-index: 100;
+    text-decoration: none;
+    opacity: 0; /* Сначала невидим */
+    transition: opacity 0.3s ease, transform 0.1s ease;
+}
+
+.floating-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0,205,229,0.5));
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+(function () {
+    function positionLogo() {
+        const logo = document.querySelector(".floating-logo-link");
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+
+        if (!logo) return;
+
+        // Если нет header или footer, просто позиционируем внизу справа
+        if (!header || !footer) {
+            logo.style.bottom = "20px";
+            logo.style.top = "auto";
+            logo.style.opacity = "1";
+            return;
+        }
+
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const logoHeight = logo.offsetHeight;
+
+        const logoBottomOffset = 10;
+        const logoTopOffset = 80;
+
+        const maxTop = footerTop - logoHeight - logoBottomOffset;
+        const minTop = headerBottom + logoTopOffset;
+
+        let targetTop = windowHeight - logoHeight - logoBottomOffset;
+
+        if (targetTop + logoHeight > maxTop) {
+            targetTop = maxTop;
+        }
+        if (targetTop < minTop) {
+            targetTop = minTop;
+        }
+
+        logo.style.top = `${targetTop}px`;
+        logo.style.bottom = "auto";
+        logo.style.opacity = "1"; // Показываем после позиционирования
+    }
+
+    // Запускаем после загрузки DOM
+    document.addEventListener("DOMContentLoaded", function() {
+        positionLogo();
+        // На случай, если DOM загрузился, но другие элементы еще не готовы
+        setTimeout(positionLogo, 100);
+    });
+    
+    window.addEventListener("load", positionLogo);
+    window.addEventListener("scroll", positionLogo);
+    window.addEventListener("resize", positionLogo);
+})();
+</script></html>
