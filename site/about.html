@@ -13,6 +13,12 @@
     </header>
     
     <nav>
+    <div class="nav-container">
+        <button class="mobile-menu-toggle" aria-label="Меню">
+            <span class="burger-icon"></span>
+            <span class="burger-icon"></span>
+            <span class="burger-icon"></span>
+        </button>
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="about.html" class="active">О проекте</a></li>
@@ -20,7 +26,8 @@
             <li><a href="journal.html">Журнал</a></li>
             <li><a href="resources.html">Ресурсы</a></li>
         </ul>
-    </nav>
+    </div>
+</nav>
 
     <main class="about-main">
         <section class="project-details">
@@ -190,4 +197,35 @@
     window.addEventListener("scroll", positionLogo);
     window.addEventListener("resize", positionLogo);
 })();
-</script></html>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (toggleButton && navMenu) {
+        toggleButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
+</script>
+</html>
