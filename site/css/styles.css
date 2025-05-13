@@ -810,3 +810,162 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
+
+
+/* Общие мобильные стили */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    header {
+        padding: 1rem 0;
+        min-height: auto;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        -webkit-text-stroke: 0.5px #69635f;
+    }
+
+    header h2 {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Навигация */
+    nav {
+        height: auto;
+        padding: 8px 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .nav-container {
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav ul li {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 8px 0;
+        font-size: 1rem;
+    }
+
+    /* Основное содержимое */
+    main {
+        padding: 1rem;
+    }
+
+    /* Карточки проектов */
+    .project-card, .info-block, .result-item, .direction {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Быстрые ссылки */
+    .quick-links .button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    /* Команда */
+    .core-member {
+        flex-direction: column;
+    }
+
+    .core-member img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+        margin: 0 auto 15px;
+    }
+
+    /* Журнал */
+    .news-card, .full-width-news {
+        height: auto !important;
+        padding: 15px;
+    }
+
+    .news-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Модальные окна */
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+        margin: 10% auto;
+    }
+
+    /* Ресурсы */
+    .resources-main ul {
+        padding: 15px;
+    }
+
+    /* Футер */
+    footer {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-annotation, .project-details {
+        padding: 15px;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Члены команды */
+    .member-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .member-role {
+        font-size: 0.9rem;
+    }
+
+    /* Список участников */
+    .member-item {
+        flex-direction: column;
+        padding: 5px 0;
+    }
+
+    /* Плавающий логотип */
+    .floating-logo {
+        width: 70px;
+    }
+}
+
+/* Горизонтальная ориентация на мобильных */
+@media (max-width: 767px) and (orientation: landscape) {
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        width: auto;
+        flex: 1 0 calc(50% - 10px);
+    }
+}
