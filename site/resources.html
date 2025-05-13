@@ -29,11 +29,102 @@
         <ul>
             <li><a href="https://github.com/pojalustayuidi/Safety-madness" target="_blank">Репозиторий проекта разработки компьютерной игры "Safety Madness" в GitHub</a></li>
         </ul>
+<h2>Репозиторий проектной практики на GitHub</h2>
+        <ul>
+            <li><a href="https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/Wiki.md" target="_blank">Документация по проектной практике</a></li>
+        </ul>
+<h2>GitHub разработчика сайта</h2>
+        <ul>
+            <li><a href="https://github.com/NetkachevDaniil" target="_blank">Контакты разработчика сайта</a></li>
+        </ul>
 
     </main>
     <footer>
         <p>Московский политехнический университет © 2025</p>
-        <p>Проект выполнен в рамках проектной практики</p>
+        <p>Сайт выполнен в рамках практики по дисциплине «Проектная деятельность»</p>
     </footer>
+<!-- Логотип + стили + логика -->
+<a href="https://github.com/NetkachevDaniil" target="_blank" class="floating-logo-link">
+    <img src="images/gpt.png" alt="Логотип" class="floating-logo">
+</a>
+
+<style>
+.floating-logo-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px; /* Начальная позиция до расчета скриптом */
+    z-index: 100;
+    text-decoration: none;
+    opacity: 0; /* Сначала невидим */
+    transition: opacity 0.3s ease, transform 0.1s ease;
+}
+
+.floating-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0,205,229,0.5));
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+(function () {
+    function positionLogo() {
+        const logo = document.querySelector(".floating-logo-link");
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+
+        if (!logo) return;
+
+        // Если нет header или footer, просто позиционируем внизу справа
+        if (!header || !footer) {
+            logo.style.bottom = "20px";
+            logo.style.top = "auto";
+            logo.style.opacity = "1";
+            return;
+        }
+
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const logoHeight = logo.offsetHeight;
+
+        const logoBottomOffset = 10;
+        const logoTopOffset = 80;
+
+        const maxTop = footerTop - logoHeight - logoBottomOffset;
+        const minTop = headerBottom + logoTopOffset;
+
+        let targetTop = windowHeight - logoHeight - logoBottomOffset;
+
+        if (targetTop + logoHeight > maxTop) {
+            targetTop = maxTop;
+        }
+        if (targetTop < minTop) {
+            targetTop = minTop;
+        }
+
+        logo.style.top = `${targetTop}px`;
+        logo.style.bottom = "auto";
+        logo.style.opacity = "1"; // Показываем после позиционирования
+    }
+
+    // Запускаем после загрузки DOM
+    document.addEventListener("DOMContentLoaded", function() {
+        positionLogo();
+        // На случай, если DOM загрузился, но другие элементы еще не готовы
+        setTimeout(positionLogo, 100);
+    });
+    
+    window.addEventListener("load", positionLogo);
+    window.addEventListener("scroll", positionLogo);
+    window.addEventListener("resize", positionLogo);
+})();
+</script>
 </body>
 </html>
