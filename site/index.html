@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,38 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проект "Охрана труда на предприятии" | Московский Политех</title>
     <link rel="stylesheet" href="css/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Охрана труда на предприятии</h1>
         <h2>Проект студентов Московского политехнического университета</h2>
-	    <button class="mobile-menu-toggle" aria-label="Меню">
-  <span class="burger-icon"></span>
-  <span class="burger-icon"></span>
-  <span class="burger-icon"></span>
-</button>
     </header>
-    
+
     <nav>
-        <ul>
-            <li><a href="index.html" class="active">Главная</a></li>
-            <li><a href="about.html">О проекте</a></li>
-            <li><a href="team.html">Участники</a></li>
-            <li><a href="journal.html">Журнал</a></li>
-            <li><a href="resources.html">Ресурсы</a></li>
-        </ul>
+        <div class="nav-container"> <!-- ИЗМЕНЕНО: обернул для бургер-меню -->
+            <button class="mobile-menu-toggle" aria-label="Меню"> <!-- ИЗМЕНЕНО: бургер внутри nav-container -->
+                <span class="burger-icon"></span>
+                <span class="burger-icon"></span>
+                <span class="burger-icon"></span>
+            </button>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="team.html">Участники</a></li>
+                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="index-main">
         <section class="project-annotation">
             <h2>Аннотация проекта</h2>
-            
             <div class="project-card">
                 <h3>&#127919 Цель проекта</h3>
                 <p>Повышение осведомленности о технике безопасности и правилах поведения при чрезвычайных ситуациях в образовательных учреждениях и на производственных предприятиях.</p>
             </div>
-
             <div class="project-card">
                 <h3>&#x1F4DD Основные задачи</h3>
                 <ul>
@@ -45,23 +46,19 @@
                     <li>Анализ производственных рисков и разработка материалов для предприятий</li>
                 </ul>
             </div>
-
             <section class="project-card">
                 <h3>&#x1F4C8 Реализованные результаты</h3>
-                
                 <div class="results-grid">
                     <div class="result-item">
                         <h4>Для школ</h4>
                         <p>Проведены уроки безопасности с раздачей памяток</p>
                         <button class="button" data-type="school">Показать фото</button>
                     </div>
-                    
                     <div class="result-item">
                         <h4>Для вузов</h4>
                         <p>Созданы плакаты по пожарной безопасности</p>
                         <button class="button" data-type="university">Показать фото</button>
                     </div>
-                    
                     <div class="result-item">
                         <h4>Для предприятий</h4>
                         <p>Разработаны инструкции и инфографика</p>
@@ -69,7 +66,6 @@
                     </div>
                 </div>
             </section>
-
             <div class="project-card">
                 <h3>&#x1F465 Руководители</h3>
                 <p><a href="https://vk.com/lidia_ermak" target="_blank">к.т.н., доцент Л.С. Ермакова</a><br>
@@ -80,7 +76,7 @@
         <section class="quick-links">
             <h2>Быстрые ссылки</h2>
             <a href="journal.html" class="button">Последние новости проекта</a>
-	    <a href="team.html" class="button">Состав команды</a>
+            <a href="team.html" class="button">Состав команды</a>
             <a href="resources.html" class="button">Полезные ссылки</a>
         </section>
     </main>
@@ -90,13 +86,13 @@
         <p>Сайт выполнен в рамках практики по дисциплине «Проектная деятельность»</p>
     </footer>
 
-    <!-- Модальное окно -->
     <div id="imageModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <div class="modal-images" id="modalImages"></div>
         </div>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const imageData = {
@@ -120,162 +116,63 @@
                 ]
             };
 
-            document.querySelectorAll('.button').forEach(btn => {
+            document.querySelectorAll('.button[data-type]').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const type = this.getAttribute('data-type');
-                    openModal(type);
+                    const modal = document.getElementById('imageModal');
+                    const modalImages = document.getElementById('modalImages');
+                    modalImages.innerHTML = '';
+                    if (imageData[type]) {
+                        imageData[type].forEach(img => {
+                            const imgEl = document.createElement('img');
+                            imgEl.src = img.src;
+                            imgEl.alt = img.alt;
+                            modalImages.appendChild(imgEl);
+                        });
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
                 });
             });
 
-            document.querySelector('.close-btn').addEventListener('click', closeModal);
+            document.querySelector('.close-btn').addEventListener('click', () => {
+                document.getElementById('imageModal').style.display = 'none';
+                document.body.style.overflow = '';
+            });
 
             window.addEventListener('click', function(event) {
                 if (event.target == document.getElementById('imageModal')) {
-                    closeModal();
+                    document.getElementById('imageModal').style.display = 'none';
+                    document.body.style.overflow = '';
                 }
             });
-
-            function openModal(type) {
-                const modal = document.getElementById('imageModal');
-                const modalImages = document.getElementById('modalImages');
-                
-                modalImages.innerHTML = '';
-                
-                if (imageData[type]) {
-                    imageData[type].forEach(img => {
-                        const imgEl = document.createElement('img');
-                        imgEl.src = img.src;
-                        imgEl.alt = img.alt;
-                        modalImages.appendChild(imgEl);
-                    });
-                    
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            }
-
-            function closeModal() {
-                document.getElementById('imageModal').style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
         });
     </script>
-<!-- Логотип + стили + логика -->
-<a href="https://github.com/NetkachevDaniil" target="_blank" class="floating-logo-link">
-    <img src="images/gpt.png" alt="Логотип" class="floating-logo">
-</a>
 
-<style>
-.floating-logo-link {
-    position: fixed;
-    right: 20px;
-    bottom: 20px; /* Начальная позиция до расчета скриптом */
-    z-index: 100;
-    text-decoration: none;
-    opacity: 0; /* Сначала невидим */
-    transition: opacity 0.3s ease, transform 0.1s ease;
-}
-
-.floating-logo {
-    width: 100px;
-    height: auto;
-    filter: drop-shadow(0 0 5px rgba(0,205,229,0.5));
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-.floating-logo:hover {
-    transform: scale(1.1);
-}
-</style>
-
-<script>
-(function () {
-    function positionLogo() {
-        const logo = document.querySelector(".floating-logo-link");
-        const header = document.querySelector("header");
-        const footer = document.querySelector("footer");
-
-        if (!logo) return;
-
-        // Если нет header или footer, просто позиционируем внизу справа
-        if (!header || !footer) {
-            logo.style.bottom = "20px";
-            logo.style.top = "auto";
-            logo.style.opacity = "1";
-            return;
-        }
-
-        const headerBottom = header.getBoundingClientRect().bottom;
-        const footerTop = footer.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        const logoHeight = logo.offsetHeight;
-
-        const logoBottomOffset = 10;
-        const logoTopOffset = 80;
-
-        const maxTop = footerTop - logoHeight - logoBottomOffset;
-        const minTop = headerBottom + logoTopOffset;
-
-        let targetTop = windowHeight - logoHeight - logoBottomOffset;
-
-        if (targetTop + logoHeight > maxTop) {
-            targetTop = maxTop;
-        }
-        if (targetTop < minTop) {
-            targetTop = minTop;
-        }
-
-        logo.style.top = `${targetTop}px`;
-        logo.style.bottom = "auto";
-        logo.style.opacity = "1"; // Показываем после позиционирования
-    }
-
-    // Запускаем после загрузки DOM
-    document.addEventListener("DOMContentLoaded", function() {
-        positionLogo();
-        // На случай, если DOM загрузился, но другие элементы еще не готовы
-        setTimeout(positionLogo, 100);
-    });
-    
-    window.addEventListener("load", positionLogo);
-    window.addEventListener("scroll", positionLogo);
-    window.addEventListener("resize", positionLogo);
-})();
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-    
-    toggleButton.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        
-        // Блокировка скролла при открытом меню
-        if (navMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    });
-    
-    // Закрытие меню при клике на пункт
-    navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            toggleButton.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        toggleButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     });
-    
-    // Закрытие меню при ресайзе (если перешли на десктопный вид)
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 767) {
-            toggleButton.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-});
-</script></html>
+    </script>
+</body>
+</html>
