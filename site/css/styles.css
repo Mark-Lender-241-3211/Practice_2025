@@ -1,6 +1,6 @@
 /* Общие стили для всех страниц */
 body {
-    font-family: Comic Sans MS, sans-serif;
+    font-family: 'DM Sans', 'Comic Sans MS', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -12,11 +12,13 @@ body {
     background-color: #001122;
     margin: 0 auto; /* Центрирование */
 }
+
 @media (max-width: 600px) {
   .floating-logo {
     width: 70px;
   }
 }
+
 header {
     background: #001122;
     color: #53e5db;
@@ -171,7 +173,7 @@ footer {
 }
 /* Кнопки (общие для всех страниц) */
 .button {
-    font-family: Comic Sans MS, sans-serif;
+    font-family: 'DM Sans', 'Comic Sans MS', sans-serif;
     display: inline-block;
     background: #f2d4c0;
     color: #2D3B36;
@@ -483,7 +485,7 @@ footer {
 }
 
 .team-main .toggle-btn {
-    font-family: Comic Sans MS, sans-serif;
+    font-family: 'DM Sans', 'Comic Sans MS', sans-serif;
     display: inline-flex;
     background: #f2d4c0;
     color: #2D3B36;
@@ -596,7 +598,7 @@ footer {
 }
 
 .journal-main .show-news-media {
-    font-family: Comic Sans MS, sans-serif;
+    font-family: 'DM Sans', 'Comic Sans MS', sans-serif;
     display: inline-flex;
     background: #f2d4c0;
     color: #2D3B36;
@@ -728,7 +730,6 @@ footer {
 }
 
 .image-wrapper {
-
     overflow: hidden;
     border: 0.75px solid #ff6500;
     box-shadow: 0 3px 10px rgb(168 168 168 / 0%);
@@ -819,7 +820,6 @@ html {
     scroll-padding-top: 100px;
 }
 
-
 /* Общие мобильные стили */
 @media (max-width: 767px) {
     body {
@@ -831,13 +831,7 @@ html {
         padding: 1rem 0;
         min-height: auto;
     }
-    .mobile-menu-toggle {
-        display: flex;
-    }
     
-    .nav-container {
-        position: relative;
-    }
     header h1 {
         font-size: 2rem;
         -webkit-text-stroke: 0.5px #69635f;
@@ -862,7 +856,7 @@ html {
         padding: 0;
     }
 
-   nav ul {
+    nav ul {
         display: none;
         position: absolute;
         top: 100%;
@@ -874,33 +868,31 @@ html {
         border: 1px solid #ff6500;
         border-radius: 0 0 10px 10px;
         padding: 10px 0;
+        margin-top: 8px;
     }
-     nav ul.active {
+    
+    nav ul.active {
         display: flex;
     }
+    
     nav ul li {
-text-align: center;
         width: 100%;
+        text-align: center;
         padding: 0;
     }
-    nav ul li {
-        flex: 1 1 auto;
-        min-width: 45%; /* Две колонки */
-        text-align: center;
-    }
-
-     nav a {
-         padding: 12px 20px;
-        border-bottom: 1px solid rgba(255, 101, 0, 0.2);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    
+    nav a {
+        padding: 12px 20px;
         display: block;
         text-align: center;
-        font-size: 0.95rem;
-}
-    nav a:last-child {
-        border-bottom: none;
+    }
+    
+    /* Для горизонтальной ориентации */
+    @media (max-width: 767px) and (orientation: landscape) {
+        nav ul {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
     }
 
     /* Основное содержимое */
@@ -997,58 +989,57 @@ text-align: center;
     }
 }
 
-  /* Для очень узких экранов (например, iPhone 5/SE) */
-    @media (max-width: 320px) {
-        nav ul li {
-            min-width: 90%; /* Одна колонка */
-        }
-        
-        nav a {
-            font-size: 0.8rem;
-        }
+/* Для очень узких экранов (например, iPhone 5/SE) */
+@media (max-width: 320px) {
+    nav ul li {
+        min-width: 90%; /* Одна колонка */
     }
     
-    /* Горизонтальная ориентация */
-    @media (max-width: 767px) and (orientation: landscape) {
-        nav ul {
-            flex-direction: row;
-            flex-wrap: nowrap;
-        }
-        
-        nav ul li {
-            min-width: auto;
-            flex: 1;
-        }
+    nav a {
+        font-size: 0.8rem;
     }
 }
 
-/* ИЗМЕНЕНО: кнопка бургер-меню */
-.mobile-menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 40px;
-    height: 30px;
+/* Кнопка бургер-меню - только для мобильных */
+@media (max-width: 767px) {
+    .mobile-menu-toggle {
+        display: flex;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        padding: 0;
+        z-index: 110;
+    }
+
+    .burger-icon {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #ffc900;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active .burger-icon:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active .burger-icon:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.active .burger-icon:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 }
 
-.burger-icon {
-    width: 100%;
-    height: 3px;
-    background-color: #ff6500;
-    margin: 3px 0;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+@media (min-width: 768px) {
+    .mobile-menu-toggle {
+        display: none !important;
+    }
 }
 
-.mobile-menu-toggle.active .burger-icon:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.mobile-menu-toggle.active .burger-icon:nth-child(2) {
-    opacity: 0;
-}
-.mobile-menu-toggle.active .burger-icon:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
+/* Убедитесь, что шрифт DM Sans загружается правильно */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
