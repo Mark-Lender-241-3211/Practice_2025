@@ -842,30 +842,38 @@ html {
     /* Навигация */
     nav {
         height: auto;
-        padding: 8px 0;
-        border-radius: 0;
-        width: 100%;
+        padding: 8px 5px;
+        border-radius: 15px;
+        width: 95%;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .nav-container {
         padding: 0;
     }
 
-    nav ul {
-        flex-direction: column;
+   nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 5px;
     }
-
+    
     nav ul li {
-        flex: none;
-        width: 100%;
+        flex: 1 1 auto;
+        min-width: 45%; /* Две колонки */
         text-align: center;
+        padding: 2px;
     }
 
-    nav a {
+     nav a {
+        font-size: 0.85rem;
+        padding: 6px 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         display: block;
-        padding: 8px 0;
-        font-size: 1rem;
     }
 
     /* Основное содержимое */
@@ -962,15 +970,27 @@ html {
     }
 }
 
-/* Горизонтальная ориентация на мобильных */
-@media (max-width: 767px) and (orientation: landscape) {
-    nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
+  /* Для очень узких экранов (например, iPhone 5/SE) */
+    @media (max-width: 320px) {
+        nav ul li {
+            min-width: 90%; /* Одна колонка */
+        }
+        
+        nav a {
+            font-size: 0.8rem;
+        }
     }
-
-    nav ul li {
-        width: auto;
-        flex: 1 0 calc(50% - 10px);
+    
+    /* Горизонтальная ориентация */
+    @media (max-width: 767px) and (orientation: landscape) {
+        nav ul {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        
+        nav ul li {
+            min-width: auto;
+            flex: 1;
+        }
     }
 }
