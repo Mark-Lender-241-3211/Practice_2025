@@ -10,7 +10,6 @@
 <body>
     <header>
         <h1>О проекте</h1>
-        <p>Детальное описание проекта "Охрана труда на предприятии"</p>
     </header>
     
     <nav>
@@ -25,20 +24,20 @@
 
     <main class="about-main">
         <section class="project-details">
-            <h2>Подробная информация о проекте</h2>
+            <h2>Подробная информация о проекте "Охрана труда на предприятии"</h2>
             
             <div class="info-block">
-                <h3>Объект исследования</h3>
+                <h3>🔍 Объект исследования</h3>
                 <p>Система охраны труда в образовательных учреждениях (школах, вузах) и на предприятиях.</p>
             </div>
 
             <div class="info-block">
-                <h3>Предмет исследования</h3>
+                <h3>📌 Предмет исследования</h3>
                 <p>Организационные, правовые и методические аспекты обеспечения безопасных условий труда и их влияние на снижение уровня профессиональных рисков, травматизма и заболеваний среди работников и обучающихся.</p>
             </div>
 
             <div class="info-block">
-                <h3>Основные направления работы</h3>
+                <h3>Основные направления работы ↘️</h3>
                 <div class="work-directions">
                     <div class="direction">
                         <h4>Школы</h4>
@@ -68,7 +67,7 @@
             </div>
 
             <div class="info-block">
-                <h3>Проблематика</h3>
+                <h3>&#9888 Проблематика</h3>
                 <p>Несоблюдение мер по охране труда на предприятиях приводит к:</p>
                 <ul class="problem-list">
                     <li>Падениям с высоты (23% случаев)</li>
@@ -79,7 +78,7 @@
             </div>
 
             <div class="info-block">
-                <h3>Методы реализации</h3>
+                <h3>📚  Методы реализации</h3>
                 <ol class="methods-list">
                     <li>Анализ нормативной базы (Трудовой кодекс РФ, ГОСТы)</li>
                     <li>Полевые исследования в образовательных учреждениях</li>
@@ -90,7 +89,7 @@
             </div>
 
             <div class="info-block">
-                <h3>Ожидаемые результаты</h3>
+                <h3>&#x2714 Ожидаемые результаты</h3>
                 <ul class="results-list">
                     <li>Повышение уровня осведомленности о технике безопасности</li>
                     <li>Снижение травматизма в учебных заведениях</li>
@@ -103,7 +102,92 @@
 
     <footer>
         <p>Московский политехнический университет © 2025</p>
-        <p>Руководители: к.т.н., доцент Л.С. Ермакова, к.т.н., доцент Ю.С. Кудрявцева</p>
+<div class="leaders-block">
+  Руководители: 
+  <a href="https://vk.com/lidia_ermak" target="_blank" class="leaders-link">к.т.н., доцент Л.С. Ермакова</a>, 
+  <a href="https://vk.com/id2804543" target="_blank" class="leaders-link">к.т.н., доцент Ю.С. Кудрявцева</a>
+</div>
     </footer>
-</body>
-</html>
+<!-- Логотип + стили + логика -->
+<a href="https://github.com/NetkachevDaniil" target="_blank" class="floating-logo-link">
+    <img src="images/gpt.png" alt="Логотип" class="floating-logo">
+</a>
+
+<style>
+.floating-logo-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px; /* Начальная позиция до расчета скриптом */
+    z-index: 100;
+    text-decoration: none;
+    opacity: 0; /* Сначала невидим */
+    transition: opacity 0.3s ease, transform 0.1s ease;
+}
+
+.floating-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0,205,229,0.5));
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+(function () {
+    function positionLogo() {
+        const logo = document.querySelector(".floating-logo-link");
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+
+        if (!logo) return;
+
+        // Если нет header или footer, просто позиционируем внизу справа
+        if (!header || !footer) {
+            logo.style.bottom = "20px";
+            logo.style.top = "auto";
+            logo.style.opacity = "1";
+            return;
+        }
+
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const logoHeight = logo.offsetHeight;
+
+        const logoBottomOffset = 10;
+        const logoTopOffset = 80;
+
+        const maxTop = footerTop - logoHeight - logoBottomOffset;
+        const minTop = headerBottom + logoTopOffset;
+
+        let targetTop = windowHeight - logoHeight - logoBottomOffset;
+
+        if (targetTop + logoHeight > maxTop) {
+            targetTop = maxTop;
+        }
+        if (targetTop < minTop) {
+            targetTop = minTop;
+        }
+
+        logo.style.top = `${targetTop}px`;
+        logo.style.bottom = "auto";
+        logo.style.opacity = "1"; // Показываем после позиционирования
+    }
+
+    // Запускаем после загрузки DOM
+    document.addEventListener("DOMContentLoaded", function() {
+        positionLogo();
+        // На случай, если DOM загрузился, но другие элементы еще не готовы
+        setTimeout(positionLogo, 100);
+    });
+    
+    window.addEventListener("load", positionLogo);
+    window.addEventListener("scroll", positionLogo);
+    window.addEventListener("resize", positionLogo);
+})();
+</script></html>
