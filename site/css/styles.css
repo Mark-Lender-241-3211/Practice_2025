@@ -7,10 +7,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: #001122;
     margin: 0 auto; /* Центрирование */
 }
-
+@media (max-width: 600px) {
+  .floating-logo {
+    width: 70px;
+  }
+}
 header {
     background: #001122;
     color: #53e5db;
@@ -127,7 +133,6 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     flex: 1;
-    bottom: 200px;
     width: 100%;
     box-sizing: border-box;
 }
