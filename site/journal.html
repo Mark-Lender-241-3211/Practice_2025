@@ -13,14 +13,21 @@
 <h2>Новостной блог о прогрессе работы каждого участника команды по проектной практике!</h2>
     </header>
     <nav>
+    <div class="nav-container">
+        <button class="mobile-menu-toggle" aria-label="Меню">
+            <span class="burger-icon"></span>
+            <span class="burger-icon"></span>
+            <span class="burger-icon"></span>
+        </button>
         <ul>
             <li><a href="index.html">Главная</a></li>
-            <li><a href="about.html">О проекте</a></li>
+            <li><a href="about.html" class="active">О проекте</a></li>
             <li><a href="team.html">Участники</a></li>
-            <li><a href="journal.html" class="active">Журнал</a></li>
+            <li><a href="journal.html">Журнал</a></li>
             <li><a href="resources.html">Ресурсы</a></li>
         </ul>
-    </nav>
+    </div>
+</nav>
     <main class="journal-main">
         <h2>Ход работы</h2>
     
@@ -37,7 +44,7 @@
         <!-- Новость 2 -->
         <article class="news-card" data-media='{"images":["images/ilya/1.jpg","images/ilya/4.jpg","images/ilya/1.png","images/ilya/3.png"]}'>
             <div class="news-content">
-                <h3>07.03.2025 - Объявлен старт разработки компьютерной игры "Safety Madness"! <br><br></h3>
+                <h3>07.03.2025 - Объявлен старт разработки компьютерной игры "Safety Madness"!</h3>
                 <p><a href="team.html#enner-ilya" class="member-link">Еннер Илья</a> (241-3211), совместно с другими членами команды разработки, создал репозиторий проекта на гитхабе и начал работу по написанию кода. Также <a href="team.html#enner-ilya" class="member-link">Илья</a> предоставил код для работы стартового меню игры и продолжил работу над основными механиками.</p>
             </div>
             <button class="show-news-media">Просмотреть</button>
@@ -73,7 +80,7 @@
         <!-- Новость 6 -->
         <article class="news-card" data-media='{"images":["images/ilya/2.png","images/ilya/5.png","images/ilya/6.png","images/ilya/7.png"],"video":"videos/7.mp4"}'>
             <div class="news-content">
-                <h3>21.04.2025 - Демоверсия почти готова! <br><br></h3>
+                <h3>21.04.2025 - Демоверсия почти готова!</h3>
                 <p><a href="team.html#enner-ilya" class="member-link">Еннер Илья</a> (241-3211), совместно с другими членами команды, представил разработку на занятии по проектной деятельнотси. У Ильи получилось "внедрить" все анимации и наполнить первую локацию различными событиями, тем самым почти завершив работу над первым уровнем!</p>
             </div>
             <button class="show-news-media">Просмотреть</button>
@@ -266,6 +273,36 @@
     window.addEventListener("scroll", positionLogo);
     window.addEventListener("resize", positionLogo);
 })();
+</script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (toggleButton && navMenu) {
+        toggleButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
 </script>
 </body>
 </html>
