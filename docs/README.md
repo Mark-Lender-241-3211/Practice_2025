@@ -1,7 +1,9 @@
 - [About bot](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20bot.md) - Страница с информацией работе бота
   - Описание
   - Функционал
-  - Планируемый функционал 
+  - Планируемый функционал
+  - Используемые технологии
+  - Используемые источники
 - [About project](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20project.md) - Страница с информацией о проекте
   - Описание проекта
   - Участники
