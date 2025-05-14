@@ -6,8 +6,8 @@
   - Результаты
 - [About bot](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20bot.md) - Страница с информацией работе бота
   - Описание
-  - Команды
-  - Этапы разработки 
+  - Функционал
+  - Планируемый функционал 
 - [About site](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20site) - Страница с информацией о сайте
   - Структура сайте
   - Страницы сайта 
