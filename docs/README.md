@@ -10,6 +10,6 @@
   - Ход работы
   - Использумые технологии
   - Результаты
-- [About site](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20site) - Страница с информацией о сайте
+- [About site](https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20site.md) - Страница с информацией о сайте
   - Структура сайте
   - Страницы сайта 
