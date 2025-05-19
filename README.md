@@ -14,7 +14,7 @@
 
 ## Вариативная часть задания
 
-Разработка телеграм-бота SafetyBot ([@SafetyTheBestBot](https://web.telegram.org/k/#@SafetyTheBestBot) )
+Разработка телеграм-бота SafetyBot ( [@SafetyTheBestBot](https://web.telegram.org/k/#@SafetyTheBestBot) )
 
 ## Ответственный по проектной (учебной) практике
 
