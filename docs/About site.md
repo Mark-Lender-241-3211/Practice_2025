@@ -1,4 +1,5 @@
-# Структура сайта
+[Сслыка на сайт](https://mark-lender-241-3211.github.io/Practice_2025/site/)
+# Структура [/site](https://github.com/Mark-Lender-241-3211/Practice_2025/tree/main/site)
 ```markdown
 site/
 ├── css                 # Папка с файлами настроек стиля веб-страниц сайта
