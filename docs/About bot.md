@@ -38,8 +38,10 @@
   - [Гайд "Телеграм Бот на Python с нуля!"](https://www.youtube.com/watch?v=7mdyOUjECP0)
 ## Этап 1: Реализация минимального функционала
 1) Создание бота с помощью официального тг-бота BotFather
+
 ![image](https://github.com/user-attachments/assets/b95f8183-a518-441b-80ac-2b209016f7f8)
-2) Реализация
+
+3) Реализация
   - Написание минимального бота с помощью официальной документации
 ```python
 from telegram import Update
