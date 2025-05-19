@@ -41,7 +41,7 @@
 
 ![image](https://github.com/user-attachments/assets/b95f8183-a518-441b-80ac-2b209016f7f8)
 
-3) Реализация
+2) Реализация
   - Написание минимального бота с помощью официальной документации
 ```python
 from telegram import Update
