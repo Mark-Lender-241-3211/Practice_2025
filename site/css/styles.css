@@ -190,8 +190,6 @@ footer {
     border: none;
     cursor: pointer;
     line-height: 1;
-    min-width: 120px;
-    height: 45px;
     text-align: center; /* важно! */
 }
 
