@@ -7,7 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mv site/ public/  # Если ваш сайт лежит в папке /site
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 'public'
+          path: 'site'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+  pages:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v4
