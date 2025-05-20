@@ -174,20 +174,22 @@ footer {
 /* Кнопки (общие для всех страниц) */
 .button {
     font-family: 'DM Sans', 'Comic Sans MS', sans-serif;
-    display: inline-block;
+    display: inline-flex;          /* Ключевое изменение */
+    justify-content: center;       /* Центрирование по горизонтали */
+    align-items: center;           /* Центрирование по вертикали */
     background: #f2d4c0;
     color: #2D3B36;
     padding: 12px 25px;
     margin: 0 15px;
-    justify-content: center;
-    align-items: center;
     border-radius: 6px;
-    text-align: center;
     text-decoration: none;
     transition: all 0.3s;
     font-size: 0.9rem;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(109,109,109,0.1);
+    border: none;                  /* Важно для <button> */
+    cursor: pointer;               /* Курсор-указатель */
+    line-height: normal;           /* Фикс для выравнивания текста */
 }
 
 .button:hover {
