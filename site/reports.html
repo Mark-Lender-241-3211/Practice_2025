@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёты проекта | Охрана труда</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Отчёты</h1>
+        <h2>Взаимодействие с организациями-партнёрами Московского Политеха и другие отчёты</h2>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span class="burger-icon"></span>
+                <span class="burger-icon"></span>
+                <span class="burger-icon"></span>
+            </button>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="team.html">Участники</a></li>
+                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+		<li><a href="variative.html">Вариативная часть</a></li>
+		<li><a href="reports.html"class="active">Отчёты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<main class="about-main">
+    <section class="project-details">
+        <div class="info-block">
+            <h3>📍 Участие в мероприятиях</h3>
+            <p>Команда по проектной практике принимала участие в следующих событиях:</p>
+            <ul>
+                <li>Презентация компании 2ГИС</li>
+                <li>Карьерный марафон Московского Политеха</li>
+                <li>Мероприятие от ПСБ</li>
+            </ul>
+            <div class="button-group">
+                <button class="button" data-type="events">Показать фото</button>
+                <a href="https://github.com/Mark-Lender-241-3211/Practice_2025/blob/main/docs/About%20events.md" class="button" target="_blank">Подробнее</a>
+            </div>
+        </div>
+
+<div class="info-block">
+    <h3>📄 Архив Markdown-отчётов</h3>
+    <div class="leaders-block" style="margin-top: 1px;">
+        <ul style="list-style: none; padding-left: 0;">
+            <li><a href="https://github.com/..." 
+                   class="leaders-link" 
+                   style="display: block; padding: 2px 0;">• Отчёт о мероприятиях</a></li>
+            <li><a href="https://github.com/..." 
+                   class="leaders-link" 
+                   style="display: block; padding: 2px 0;">• Отчёт к вариативной части</a></li>
+            <li><a href="https://github.com/..." 
+                   class="leaders-link" 
+                   style="display: block; padding: 2px 0;">• Документация по практике</a></li>
+            <li><a href="https://github.com/..." 
+                   class="leaders-link" 
+                   style="display: block; padding: 2px 0;">• Отчёт о создании сайта</a></li>
+        </ul>
+    </div>
+</div>
+    </section>
+</main>
+
+    <footer>
+        <p>Московский политехнический университет © 2025</p>
+        <div class="leaders-block">
+            Руководители: 
+            <a href="https://vk.com/lidia_ermak" target="_blank" class="leaders-link">к.т.н., доцент Л.С. Ермакова</a>, 
+            <a href="https://vk.com/id2804543" target="_blank" class="leaders-link">к.т.н., доцент Ю.С. Кудрявцева</a>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-images" id="modalImages"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageData = {
+                events: [
+                    {src: 'images/1.1.jpg', alt: 'Конференция'},
+{src: 'images/1.2.jpg', alt: 'Конференция'},
+{src: 'images/1.3.jpg', alt: 'Конференция'},
+{src: 'images/1.4.jpg', alt: 'Конференция'},
+{src: 'images/1.5.jpg', alt: 'Конференция'},
+{src: 'images/1.6.png', alt: 'Конференция'}
+                ]
+            };
+
+            // Обработчики для модального окна (аналогичны index.html)
+            document.querySelectorAll('.button[data-type]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+                    const modal = document.getElementById('imageModal');
+                    const modalImages = document.getElementById('modalImages');
+                    modalImages.innerHTML = '';
+                    
+                    imageData[type].forEach(img => {
+                        const imgEl = document.createElement('img');
+                        imgEl.src = img.src;
+                        imgEl.alt = img.alt;
+                        modalImages.appendChild(imgEl);
+                    });
+                    
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            document.querySelector('.close-btn').addEventListener('click', () => {
+                document.getElementById('imageModal').style.display = 'none';
+                document.body.style.overflow = '';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == document.getElementById('imageModal')) {
+                    document.getElementById('imageModal').style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+<!-- Логотип + стили + логика -->
+<a href="https://web.telegram.org/k/#@SafetyTheBestBot" target="_blank" class="floating-logo-link">
+    <img src="images/gpt.png" alt="Логотип" class="floating-logo">
+</a>
+<style>
+.floating-logo-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px; /* Начальная позиция до расчета скриптом */
+    z-index: 100;
+    text-decoration: none;
+    opacity: 0; /* Сначала невидим */
+    transition: opacity 0.3s ease, transform 0.1s ease;
+}
+
+.floating-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0,205,229,0.5));
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.1);
+}
+</style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        toggleButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    </script>
+<script>
+(function () {
+    function positionLogo() {
+        const logo = document.querySelector(".floating-logo-link");
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+
+        if (!logo) return;
+
+        // Если нет header или footer, просто позиционируем внизу справа
+        if (!header || !footer) {
+            logo.style.bottom = "20px";
+            logo.style.top = "auto";
+            logo.style.opacity = "1";
+            return;
+        }
+
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const logoHeight = logo.offsetHeight;
+
+        const logoBottomOffset = 10;
+        const logoTopOffset = 80;
+
+        const maxTop = footerTop - logoHeight - logoBottomOffset;
+        const minTop = headerBottom + logoTopOffset;
+
+        let targetTop = windowHeight - logoHeight - logoBottomOffset;
+
+        if (targetTop + logoHeight > maxTop) {
+            targetTop = maxTop;
+        }
+        if (targetTop < minTop) {
+            targetTop = minTop;
+        }
+
+        logo.style.top = `${targetTop}px`;
+        logo.style.bottom = "auto";
+        logo.style.opacity = "1"; // Показываем после позиционирования
+    }
+
+    // Запускаем после загрузки DOM
+    document.addEventListener("DOMContentLoaded", function() {
+        positionLogo();
+        // На случай, если DOM загрузился, но другие элементы еще не готовы
+        setTimeout(positionLogo, 100);
+    });
+    
+    window.addEventListener("load", positionLogo);
+    window.addEventListener("scroll", positionLogo);
+    window.addEventListener("resize", positionLogo);
+})();
+</script>
+
+</body>
+</html>

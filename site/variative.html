@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариативная часть | Охрана труда</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Вариативная часть проектной практики</h1>
+        <h2>Практическая реализация технологии</h2>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span class="burger-icon"></span>
+                <span class="burger-icon"></span>
+                <span class="burger-icon"></span>
+            </button>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="team.html">Участники</a></li>
+                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="variative.html" class="active">Вариативная часть</a></li>
+                <li><a href="reports.html">Отчёты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="index-main">
+        <section class="project-annotation">
+            <div class="project-card">
+                <h3>🎯 Выбранное задание</h3>
+                <ul> 
+                    <li>Разработка Телеграм-бота <a href="https://web.telegram.org/k/#@SafetyTheBestBot">SafetyBot</a> на Python</li> 
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>📋 Основные этапы</h3>
+                <ul>
+                    <li>Разработка модульной архитектуры с использованием Python и Telegram Bot API</li>
+                    <li>Создание интерактивного меню с inline-кнопками для навигации по разделам безопасности</li>
+                    <li>Интеграция JSON-базы данных с инструкциями ТБ и средствами индивидуальной защиты</li>
+                    <li>Настройка системы команд для быстрого доступа к ГОСТам и приказам Минтруда</li>
+                    <li>Реализация Docker-контейнеризации для стабильного развёртывания решения</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>👨‍💻 Описание и функционал SafetyBot</h3>
+                <p>Телеграм-бот <a href="https://web.telegram.org/k/#@SafetyTheBestBot">SafetyBot</a> - это бот-инструктор по безопасности, предоставляющий информацию о правилах техники безопасности для различных видов работ, опасностях, способах их предотвращения, использовании средств индивидуальной защиты (СИЗ).</p>
+                <p>Как работает:</p>
+                <ul>
+                    <li>Пользователь выбирает вид работ (например, "работа на высоте", "работа с электроинструментом", "сварочные работы"), а бот предоставляет релевантные инструкции и правила.</li>
+                </ul>
+                <p>Преимущества:</p> 
+                <ul>
+                    <li>Легкий доступ к информации</li> 
+                    <li>Возможность быстро получить нужную инструкцию прямо на рабочем месте</li>
+                </ul>
+                <p>Команды:</p>
+                <ul>
+                    <li>/safety_rules [вид работ] - Получить инструкции по ТБ для конкретного вида работ.</li>
+                    <li>/sizo [вид работ] - Получить информацию о необходимых СИЗ для конкретного вида работ.</li>
+                    <li>/first_aid [травма] - Получить инструкции по оказанию первой помощи при травме (например, при ожоге, порезе).</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>📖 Ресурсы, используемые для создания SafetyBot</h3>
+                <ul>
+                    <li><a href="https://core.telegram.org/">Официальная документация Telegram Bot API</a></li>
+                    <li><a href="https://www.freecodecamp.org/news/how-to-create-a-telegram-bot-using-python/">Интернет-ресурс FredCodeCamp</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=ObwoMskHDoA">Гайд видео-курс "Телеграм бот на Python"</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=7mdyOUjECP0">Гайд "Телеграм Бот на Python с нуля!"</a></li>
+                </ul>
+            </div>
+
+            <div class="quick-links">
+                <button class="button" 
+        data-media='{"video":"videos/2.mp4"}'
+        data-title="Телеграм-бот SafetyBot "
+        data-link="https://web.telegram.org/k/#@SafetyTheBestBot">
+    📹 Видео-гид
+</button>
+                <a href="https://github.com/Mark-Lender-241-3211/Practice_2025/blob/5196bb950b6c15562a85b4fdea72ebaa8d4484be/docs/About%20bot.md" class="button" target="_blank">
+                    🔗 Подробнее на GitHub
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Московский политехнический университет © 2025</p>
+        <div class="leaders-block">
+            Руководители: 
+            <a href="https://vk.com/lidia_ermak" target="_blank" class="leaders-link">к.т.н., доцент Л.С. Ермакова</a>, 
+            <a href="https://vk.com/id2804543" target="_blank" class="leaders-link">к.т.н., доцент Ю.С. Кудрявцева</a>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для медиа -->
+    <div id="newsMediaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalNewsTitle"></h3>
+            <div class="modal-media-container" id="modalNewsMedia"></div>
+        </div>
+    </div>
+
+<script>
+// Исправленный блок скрипта
+document.addEventListener('DOMContentLoaded', function() { // Добавлена обертка
+    document.body.addEventListener('click', function(e) {
+        const btn = e.target.closest('[data-media]');
+        if(!btn) return;
+        
+        try {
+            const media = JSON.parse(btn.getAttribute('data-media'));
+            const customTitle = btn.getAttribute('data-title');
+            const link = btn.getAttribute('data-link');
+            
+            const titleWithLink = `<a href="${link}" 
+                                    class="leaders-link" 
+                                    target="_blank">${customTitle}</a>`;
+            
+            openMediaModal(titleWithLink, media);
+        } catch(error) {
+            console.error('Error parsing media data:', error);
+        }
+    });
+
+    // Закрытие модалки
+    document.querySelector('.close-btn').addEventListener('click', closeMediaModal);
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == document.getElementById('newsMediaModal')) {
+            closeMediaModal();
+        }
+    });
+
+    function openMediaModal(title, media) {
+        const modal = document.getElementById('newsMediaModal');
+        const modalTitle = document.getElementById('modalNewsTitle');
+        const modalMedia = document.getElementById('modalNewsMedia');
+        
+        modalTitle.innerHTML = title;
+        modalMedia.innerHTML = '';
+        
+        if (media.video) {
+            const videoWrapper = document.createElement('div');
+            videoWrapper.className = 'video-wrapper';
+            videoWrapper.style.display = 'flex';
+            videoWrapper.style.justifyContent = 'center';
+            videoWrapper.style.width = '100%';
+            
+            const videoEl = document.createElement('video');
+            videoEl.className = 'media-video';
+            videoEl.controls = true;
+            videoEl.style.maxHeight = '75vh';
+            videoEl.style.objectFit = 'cover';
+            videoEl.innerHTML = `<source src="${media.video}" type="video/mp4">`;
+            
+            videoEl.onloadedmetadata = () => {
+                if (videoEl.videoHeight > videoEl.videoWidth) {
+                    videoEl.style.maxWidth = '40%';
+                    videoEl.style.margin = 'auto';
+                }
+            };
+            
+            videoWrapper.appendChild(videoEl);
+            modalMedia.appendChild(videoWrapper);
+        }
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMediaModal() {
+        document.getElementById('newsMediaModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
+<!-- Логотип + стили + логика -->
+<a href="https://web.telegram.org/k/#@SafetyTheBestBot" target="_blank" class="floating-logo-link">
+    <img src="images/gpt.png" alt="Логотип" class="floating-logo">
+</a>
+<style>
+.floating-logo-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px; /* Начальная позиция до расчета скриптом */
+    z-index: 100;
+    text-decoration: none;
+    opacity: 0; /* Сначала невидим */
+    transition: opacity 0.3s ease, transform 0.1s ease;
+}
+
+.floating-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0,205,229,0.5));
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.floating-logo:hover {
+    transform: scale(1.1);
+}
+</style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        toggleButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                toggleButton.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    </script>
+<script>
+(function () {
+    function positionLogo() {
+        const logo = document.querySelector(".floating-logo-link");
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+
+        if (!logo) return;
+
+        // Если нет header или footer, просто позиционируем внизу справа
+        if (!header || !footer) {
+            logo.style.bottom = "20px";
+            logo.style.top = "auto";
+            logo.style.opacity = "1";
+            return;
+        }
+
+        const headerBottom = header.getBoundingClientRect().bottom;
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const logoHeight = logo.offsetHeight;
+
+        const logoBottomOffset = 10;
+        const logoTopOffset = 80;
+
+        const maxTop = footerTop - logoHeight - logoBottomOffset;
+        const minTop = headerBottom + logoTopOffset;
+
+        let targetTop = windowHeight - logoHeight - logoBottomOffset;
+
+        if (targetTop + logoHeight > maxTop) {
+            targetTop = maxTop;
+        }
+        if (targetTop < minTop) {
+            targetTop = minTop;
+        }
+
+        logo.style.top = `${targetTop}px`;
+        logo.style.bottom = "auto";
+        logo.style.opacity = "1"; // Показываем после позиционирования
+    }
+
+    // Запускаем после загрузки DOM
+    document.addEventListener("DOMContentLoaded", function() {
+        positionLogo();
+        // На случай, если DOM загрузился, но другие элементы еще не готовы
+        setTimeout(positionLogo, 100);
+    });
+    
+    window.addEventListener("load", positionLogo);
+    window.addEventListener("scroll", positionLogo);
+    window.addEventListener("resize", positionLogo);
+})();
+</script>
+</body>
+</html>
