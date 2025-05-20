@@ -1043,3 +1043,19 @@ html {
 
 /* Убедитесь, что шрифт DM Sans загружается правильно */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+/* Новые стили ТОЛЬКО для видео в модалках */
+#newsMediaModal .video-wrapper {
+    border: none !important; /* Убираем оранжевую обводку */
+}
+
+#newsMediaModal .media-video {
+    border: none !important; /* Убираем рамку у видео */
+    box-shadow: none !important; /* Убираем тень */
+    background: transparent !important; /* Прозрачный фон */
+}
+
+/* Убираем обводку у источника видео */
+#newsMediaModal video {
+    border: none !important;
+    outline: none !important;
+}
