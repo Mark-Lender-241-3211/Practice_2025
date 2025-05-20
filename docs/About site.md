@@ -1,4 +1,4 @@
-[Ссылка на сайт](https://mark-lender-241-3211.github.io/Practice_2025/site/)
+[Ссылка на сайт](https://mark-lender-241-3211.github.io/Practice_2025/index.html)
 # Структура [/site](https://github.com/Mark-Lender-241-3211/Practice_2025/tree/main/site)
 ```markdown
 site/
@@ -22,13 +22,13 @@ site/
 # Страницы сайта
 
 ## Меню навигации:
-- [Главная](https://mark-lender-241-3211.github.io/Practice_2025/site/index.html)
-- [О проекте](https://mark-lender-241-3211.github.io/Practice_2025/site/about.html)
-- [Участники](https://mark-lender-241-3211.github.io/Practice_2025/site/team.html)
-- [Журнал](https://mark-lender-241-3211.github.io/Practice_2025/site/journal.html)
-- [Ресурсы](https://mark-lender-241-3211.github.io/Practice_2025/site/resources.html)
-- [Вариативная часть](https://mark-lender-241-3211.github.io/Practice_2025/site/variative.html)
-- [Отчёты](https://mark-lender-241-3211.github.io/Practice_2025/site/reports.html)
+- [Главная](https://mark-lender-241-3211.github.io/Practice_2025/index.html)
+- [О проекте](https://mark-lender-241-3211.github.io/Practice_2025/about.html)
+- [Участники](https://mark-lender-241-3211.github.io/Practice_2025/team.html)
+- [Журнал](https://mark-lender-241-3211.github.io/Practice_2025/journal.html)
+- [Ресурсы](https://mark-lender-241-3211.github.io/Practice_2025/resources.html)
+- [Вариативная часть](https://mark-lender-241-3211.github.io/Practice_2025/variative.html)
+- [Отчёты](https://mark-lender-241-3211.github.io/Practice_2025/reports.html)
 
 ## Главная страница
 Домашняя страница знакомит вас с аннотацией проекта "Охрана труда на предприятии".
